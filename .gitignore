@@ -112,3 +112,6 @@ dist
 
 #Mac
 .DS_Store
+
+#terraform files
+.terraform*
