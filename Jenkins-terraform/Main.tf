@@ -59,7 +59,7 @@ resource "aws_security_group" "Jenkins-sg" {
   }
 }
 
-resource "aws_instance" "web" {
+resource "aws_instance" "jenkins" {
   ami                    = "ami-0f5ee92e2d63afc18"
   instance_type          = "t2.large"
   key_name               = "Mumbai"
@@ -68,10 +68,19 @@ resource "aws_instance" "web" {
   iam_instance_profile   = aws_iam_instance_profile.example_profile.name
 
   tags = {
-    Name = "Jenkins-sonar"
+    Name = "Jenkins-Argo"
   }
 
   root_block_device {
     volume_size = 30
+  }
+}
+
+resource "aws_eip" "jenkins" {
+  instance = aws_instance.jenkins.id
+  domain   = "vpc"
+
+  tags = {
+    Name = "Jenkins-EIP"
   }
 }
