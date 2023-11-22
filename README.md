@@ -1,6 +1,7 @@
-<!-- Tetris game built with React -->
+<!-- Tetris game built with React -->  ###
 
-Use Sonarqube block 
+Use Sonarqube block
+
 ```
 environment {
         SCANNER_HOME=tool 'sonar-scanner'
@@ -14,9 +15,10 @@ stage("Sonarqube Analysis "){
                 }
             }
         }
-```        
+```
 
 Owasp block
+
 ```
 stage('OWASP FS SCAN') {
             steps {
@@ -27,9 +29,11 @@ stage('OWASP FS SCAN') {
 ```
 
 # ARGO CD SETUP
+
 https://archive.eksworkshop.com/intermediate/290_argocd/install/
 
 # Image updater stage
+
 ```
  environment {
     GIT_REPO_NAME = "Tetris-manifest"
